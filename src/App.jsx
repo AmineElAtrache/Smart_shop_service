@@ -132,19 +132,19 @@ const liveExamples = [
 ]
 
 const diagramNodes = [
-  { id: 'user', x: 40, y: 34, icon: MessageCircle, title: 'User', tech: 'Telegram / Frontend', logo: ['TG', '#229ed9'] },
-  { id: 'gateway', x: 260, y: 34, icon: Send, title: 'User Proxy Gateway', tech: 'Telegram Bot API', logo: ['API', '#2563eb'] },
-  { id: 'orchestrator', x: 48, y: 250, icon: Route, title: 'Orchestrator Agent', tech: 'Cache + task router', logo: ['OR', '#18a058'] },
-  { id: 'ner', x: 280, y: 250, icon: BrainCircuit, title: 'NER Model Service', tech: 'XLM-RoBERTa', logo: ['HF', '#f59e0b'] },
-  { id: 'cache', x: 512, y: 250, icon: Database, title: 'Global Cache', tech: 'Redis Tier 1', logo: ['RD', '#dc2626'] },
-  { id: 'scraper-jumia', x: 222, y: 438, icon: Network, title: 'Jumia Pool', tech: 'Scrapy providers', logo: ['JM', '#f59e0b'] },
-  { id: 'scraper-avito', x: 444, y: 438, icon: Cpu, title: 'Avito Pool', tech: 'Playwright providers', logo: ['AV', '#16a34a'] },
-  { id: 'scraper-other', x: 666, y: 438, icon: Server, title: 'Other Providers', tech: 'Electro / Moteur / Mafiaway', logo: ['WEB', '#7c3aed'] },
-  { id: 'decision', x: 888, y: 438, icon: Gauge, title: 'Decision Agent', tech: '100-point scoring', logo: ['100', '#0f766e'] },
-  { id: 'generator', x: 666, y: 606, icon: Bot, title: 'Agent Generator', tech: 'Groq + template guard', logo: ['GQ', '#f97316'] },
-  { id: 'scheduler', x: 888, y: 606, icon: Clock, title: 'Ambient Scheduler', tech: 'Daily / premium hourly', logo: ['24h', '#2563eb'] },
-  { id: 'governance', x: 1034, y: 250, icon: Shield, title: 'Governance Agent', tech: 'Bus monitor + audit', logo: ['GOV', '#b91c1c'] },
-  { id: 'response', x: 1034, y: 34, icon: Radio, title: 'Response Out', tech: 'Telegram delivery', logo: ['OUT', '#229ed9'] }
+  { id: 'user', x: 40, y: 34, icon: MessageCircle, title: 'User', tech: 'WhatsApp / Frontend', logo: ['WA', '#22c55e', 'https://cdn.simpleicons.org/whatsapp'] },
+  { id: 'gateway', x: 260, y: 34, icon: Send, title: 'User Proxy Gateway', tech: 'WhatsApp Cloud API', logo: ['META', '#0668e1', 'https://cdn.simpleicons.org/meta'] },
+  { id: 'orchestrator', x: 48, y: 250, icon: Route, title: 'Orchestrator Agent', tech: 'Cache + task router', logo: ['K', '#111827', 'https://cdn.simpleicons.org/apachekafka'] },
+  { id: 'ner', x: 280, y: 250, icon: BrainCircuit, title: 'NER Model Service', tech: 'XLM-RoBERTa', logo: ['HF', '#f59e0b', 'https://cdn.simpleicons.org/huggingface'] },
+  { id: 'cache', x: 512, y: 250, icon: Database, title: 'Global Cache', tech: 'Redis Tier 1', logo: ['RD', '#dc2626', 'https://cdn.simpleicons.org/redis'] },
+  { id: 'scraper-jumia', x: 222, y: 438, icon: Network, title: 'Jumia Pool', tech: 'Scrapy providers', logo: ['JM', '#f59e0b', 'https://www.google.com/s2/favicons?domain=jumia.ma&sz=64'] },
+  { id: 'scraper-avito', x: 444, y: 438, icon: Cpu, title: 'Avito Pool', tech: 'Playwright providers', logo: ['AV', '#16a34a', 'https://www.google.com/s2/favicons?domain=avito.ma&sz=64'] },
+  { id: 'scraper-other', x: 666, y: 438, icon: Server, title: 'Other Providers', tech: 'Electro / Moteur / Mafiaway', logo: ['SC', '#16a34a', 'https://www.google.com/s2/favicons?domain=scrapy.org&sz=64'] },
+  { id: 'decision', x: 888, y: 438, icon: Gauge, title: 'Decision Agent', tech: '100-point scoring', logo: ['100', '#0f766e', ''] },
+  { id: 'generator', x: 666, y: 606, icon: Bot, title: 'Agent Generator', tech: 'Groq + template guard', logo: ['GQ', '#f97316', 'https://www.google.com/s2/favicons?domain=groq.com&sz=64'] },
+  { id: 'scheduler', x: 888, y: 606, icon: Clock, title: 'Ambient Scheduler', tech: 'Daily / premium hourly', logo: ['24h', '#2563eb', 'https://cdn.simpleicons.org/googlecalendar'] },
+  { id: 'governance', x: 1034, y: 250, icon: Shield, title: 'Governance Agent', tech: 'Bus monitor + audit', logo: ['OPA', '#b91c1c', 'https://cdn.simpleicons.org/openpolicyagent'] },
+  { id: 'response', x: 1034, y: 34, icon: Radio, title: 'Response Out', tech: 'WhatsApp delivery', logo: ['WA', '#22c55e', 'https://cdn.simpleicons.org/whatsapp'] }
 ]
 
 const diagramTopics = [
@@ -216,8 +216,8 @@ const projectLogoGroups = [
   {
     title: 'Channels and monitoring',
     logos: [
-      ['Telegram', '??', 'TG', '#229ed9', 'https://cdn.simpleicons.org/telegram'],
-      ['WhatsApp ready', '??', 'WA', '#22c55e', 'https://cdn.simpleicons.org/whatsapp'],
+      ['WhatsApp Business', '??', 'WA', '#22c55e', 'https://cdn.simpleicons.org/whatsapp'],
+      ['Meta Cloud API', '??', 'MT', '#0668e1', 'https://cdn.simpleicons.org/meta'],
       ['Prometheus', '??', 'PR', '#e6522c', 'https://cdn.simpleicons.org/prometheus'],
       ['Grafana', '??', 'GF', '#f97316', 'https://cdn.simpleicons.org/grafana']
     ]
@@ -571,9 +571,9 @@ function makePipelineStages(example, cacheMode) {
       active: ['user', 'gateway'],
       links: ['user-gateway', 'gateway-bus'],
       memory: [],
-      status: 'Gateway publishes the incoming Telegram message to Kafka.',
+      status: 'Gateway publishes the incoming WhatsApp message to Kafka.',
       log: 'User message accepted and wrapped with request_id, user_id, timestamp, and channel metadata.',
-      payload: `msg.inbound { request_id: 'req_7fa2', channel: 'telegram', text: '${example.sentence}' }`
+      payload: `msg.inbound { request_id: 'req_7fa2', channel: 'whatsapp', text: '${example.sentence}' }`
     },
     {
       key: 'ner',
@@ -630,7 +630,7 @@ function makePipelineStages(example, cacheMode) {
       memory: ['private'],
       status: 'Groq-backed generation creates a natural answer with validation guards.',
       log: 'The response follows the user language, includes source, price, score, link, and buying advice.',
-      payload: `response.outbound { language: 'user_style', validator: 'passed', channel: 'telegram' }`
+      payload: `response.outbound { language: 'user_style', validator: 'passed', channel: 'whatsapp' }`
     },
     {
       key: 'ambient',
@@ -668,7 +668,7 @@ function LiveArchitectureDiagram({ example, exampleIndex, setExampleIndex }) {
     if (!isRunning) return undefined
     const timer = window.setInterval(() => {
       setActiveStep((step) => (step + 1) % stages.length)
-    }, 1450)
+    }, 3200)
     return () => window.clearInterval(timer)
   }, [isRunning, stages.length])
 
@@ -762,14 +762,6 @@ function LiveArchitectureDiagram({ example, exampleIndex, setExampleIndex }) {
         })}
       </div>
 
-      <div className="arch-current-event-panel">
-        <div>
-          <span>Current Kafka message</span>
-          <strong>{stage.topic}</strong>
-          <p>{stage.status}</p>
-        </div>
-        <code>{stage.payload}</code>
-      </div>
 
       <div className="live-architecture-grid diagram-only">
         <div className="live-architecture-canvas">
@@ -821,6 +813,12 @@ function LiveArchitectureDiagram({ example, exampleIndex, setExampleIndex }) {
 
             <div className={`arch-packet step-${activeStep}`} key={`${activeStep}-${cacheMode}`} />
 
+            <div className={`arch-floating-event step-${activeStep}`} key={`event-${activeStep}-${cacheMode}`}>
+              <span>Kafka message</span>
+              <strong>{stage.topic}</strong>
+              <code>{stage.payload}</code>
+            </div>
+
             {showFinalMessage && (
               <div className="arch-final-message">
                 <span>Final response preview</span>
@@ -846,7 +844,10 @@ function LiveArchitectureDiagram({ example, exampleIndex, setExampleIndex }) {
                             alt=""
                             loading="lazy"
                             src={logo}
-                            onError={(event) => { event.currentTarget.style.display = 'none' }}
+                            onError={(event) => {
+                event.currentTarget.style.display = 'none'
+                event.currentTarget.parentElement?.classList.add('logo-failed')
+              }}
                           />
                           <em>{short}</em>
                           <small>{name}</small>
@@ -890,7 +891,10 @@ function ProjectLogoWall() {
                     alt=""
                     loading="lazy"
                     src={logo}
-                    onError={(event) => { event.currentTarget.style.display = 'none' }}
+                    onError={(event) => {
+                event.currentTarget.style.display = 'none'
+                event.currentTarget.parentElement?.classList.add('logo-failed')
+              }}
                   />
                   <em>{short}</em>
                 </b>
@@ -917,7 +921,20 @@ function DiagramNode({ node, active, completed, showDecisionScore }) {
     <article className={className} style={{ left: node.x, top: node.y }}>
       <div className="node-head">
         <div className="node-icon"><Icon size={20} /></div>
-        <span className="node-brand" style={{ '--node-brand-color': node.logo[1] }}>{node.logo[0]}</span>
+        <span className="node-brand" style={{ '--node-brand-color': node.logo[1] }}>
+          {node.logo[2] && (
+            <img
+              alt=""
+              loading="lazy"
+              src={node.logo[2]}
+              onError={(event) => {
+                event.currentTarget.style.display = 'none'
+                event.currentTarget.parentElement?.classList.add('logo-failed')
+              }}
+            />
+          )}
+          <em>{node.logo[0]}</em>
+        </span>
       </div>
       <h3>{node.title}</h3>
       <p>{node.tech}</p>

@@ -3470,3 +3470,767 @@ a {
     grid-template-columns: 1fr;
   }
 }
+/* Compact in-flow architecture canvas */
+.full-architecture-page {
+  width: min(1280px, calc(100% - 44px));
+  padding: 44px 0 64px;
+}
+
+.full-architecture-page .section-heading {
+  width: min(700px, 100%);
+  margin-bottom: 14px;
+}
+
+.full-architecture-page .section-heading h2 {
+  font-size: clamp(1.85rem, 2.6vw, 2.8rem);
+}
+
+.arch-current-event-panel {
+  display: none;
+}
+
+.arch-control-bar,
+.arch-examples,
+.arch-stage-track {
+  width: 100%;
+}
+
+.arch-control-bar {
+  grid-template-columns: minmax(280px, 1fr) 230px auto auto;
+}
+
+.arch-examples {
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.example-button {
+  min-height: 54px;
+  padding: 11px 14px;
+  font-size: 0.92rem;
+}
+
+.arch-stage-track {
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.arch-stage-pill {
+  min-height: 54px;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 2px 7px;
+  padding: 7px 8px;
+}
+
+.arch-stage-pill span {
+  width: 24px;
+  height: 24px;
+  font-size: 0.72rem;
+}
+
+.arch-stage-pill strong {
+  font-size: 0.7rem;
+}
+
+.arch-stage-pill small {
+  font-size: 0.62rem;
+}
+
+.full-architecture-page .live-architecture-grid.diagram-only {
+  display: grid;
+  justify-items: center;
+}
+
+.full-architecture-page .live-architecture-grid.diagram-only .live-architecture-canvas {
+  width: min(1210px, 100%);
+  max-width: 1210px;
+  min-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-inline: auto;
+  padding: 0;
+  overflow: hidden;
+}
+
+.live-architecture-grid.diagram-only .arch-canvas-inner,
+.full-architecture-page .live-architecture-grid.diagram-only .arch-canvas-inner {
+  width: 1210px !important;
+  min-width: 1210px !important;
+  height: 980px !important;
+  flex: 0 0 1210px;
+  transform: none !important;
+  transform-origin: top center !important;
+  margin: 0 !important;
+}
+
+.live-architecture-grid.diagram-only .arch-kafka-bus,
+.full-architecture-page .live-architecture-grid.diagram-only .arch-kafka-bus {
+  width: 1144px !important;
+}
+
+.arch-floating-event,
+.arch-floating-event.step-0,
+.arch-floating-event.step-1,
+.arch-floating-event.step-2,
+.arch-floating-event.step-3,
+.arch-floating-event.step-4,
+.arch-floating-event.step-5,
+.arch-floating-event.step-6,
+.arch-floating-event.step-7 {
+  left: 620px !important;
+  top: 34px !important;
+  width: 340px;
+  padding: 10px 11px;
+  z-index: 5;
+  animation: none;
+  background: rgba(255, 255, 255, 0.96);
+  border-color: #bfdbfe;
+  box-shadow: 0 14px 32px rgba(37, 99, 235, 0.11);
+}
+
+.arch-floating-event span {
+  color: #1d4ed8;
+  font-size: 0.62rem;
+}
+
+.arch-floating-event strong {
+  margin: 4px 0 6px;
+  font-size: 0.92rem;
+}
+
+.arch-floating-event code {
+  max-height: 44px;
+  padding: 7px 8px;
+  overflow: hidden;
+  font-size: 0.66rem;
+  line-height: 1.35;
+}
+
+.arch-floating-event p {
+  display: none;
+}
+
+.live-architecture-grid.diagram-only .arch-final-message,
+.full-architecture-page .live-architecture-grid.diagram-only .arch-final-message {
+  left: 32px;
+  top: 612px;
+  width: 430px;
+  padding: 12px;
+}
+
+.live-architecture-grid.diagram-only .arch-final-message strong,
+.full-architecture-page .live-architecture-grid.diagram-only .arch-final-message strong {
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.live-architecture-grid.diagram-only .arch-memory-zone,
+.full-architecture-page .live-architecture-grid.diagram-only .arch-memory-zone {
+  top: 748px !important;
+  bottom: auto !important;
+  gap: 10px;
+}
+
+.live-architecture-grid.diagram-only .arch-zone-label.memory,
+.full-architecture-page .live-architecture-grid.diagram-only .arch-zone-label.memory {
+  top: 714px !important;
+}
+
+.live-architecture-grid.diagram-only .arch-link-svg,
+.full-architecture-page .live-architecture-grid.diagram-only .arch-link-svg {
+  height: 760px;
+}
+
+.arch-memory-tier {
+  min-height: 0;
+  padding: 12px;
+}
+
+.memory-logo-row {
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.memory-logo-chip {
+  min-height: 26px;
+  padding: 3px 7px 3px 4px;
+}
+
+.memory-logo-chip img {
+  width: 18px;
+  height: 18px;
+}
+
+.arch-memory-tier p {
+  margin: 8px 0 9px;
+  font-size: 0.74rem;
+  line-height: 1.38;
+}
+
+.arch-memory-tier code {
+  margin-top: 4px;
+  padding: 4px 7px;
+  font-size: 0.68rem;
+}
+
+@media (max-width: 1320px) {
+  .full-architecture-page {
+    width: min(100% - 24px, 1280px);
+  }
+
+  .arch-stage-track {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .full-architecture-page .live-architecture-grid.diagram-only .live-architecture-canvas {
+    overflow-x: auto;
+    overflow-y: hidden;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 980px) {
+  .arch-control-bar,
+  .arch-examples,
+  .arch-stage-track {
+    grid-template-columns: 1fr;
+  }
+}
+/* Memory clearance tweak */
+.live-architecture-grid.diagram-only .arch-canvas-inner,
+.full-architecture-page .live-architecture-grid.diagram-only .arch-canvas-inner {
+  height: 1040px !important;
+}
+
+.live-architecture-grid.diagram-only .arch-memory-zone,
+.full-architecture-page .live-architecture-grid.diagram-only .arch-memory-zone {
+  top: 808px !important;
+}
+
+.live-architecture-grid.diagram-only .arch-zone-label.memory,
+.full-architecture-page .live-architecture-grid.diagram-only .arch-zone-label.memory {
+  top: 774px !important;
+}
+/* Global typography reduction */
+:root {
+  font-size: 16px;
+}
+
+body {
+  font-size: 0.95rem;
+}
+
+button,
+input,
+select,
+a {
+  font-size: 0.92rem;
+}
+
+.brand {
+  font-size: 1rem;
+}
+
+.nav-links,
+.footer-inner,
+.nav-cta,
+.primary-link,
+.secondary-link,
+.pay-button {
+  font-size: 0.9rem;
+}
+
+.eyebrow,
+.section-kicker {
+  font-size: 0.72rem;
+}
+
+.hero-copy h1,
+.developer-hero h1,
+.developer-hero-v2 h1 {
+  font-size: clamp(2.45rem, 5.6vw, 4.9rem);
+  line-height: 1;
+}
+
+.demo-copy h2,
+.section-heading h2,
+.benefit-grid h2,
+.premium-grid h2,
+.cta-inner h2,
+.diagram-heading h2,
+.technology-heading h2 {
+  font-size: clamp(1.55rem, 3vw, 2.45rem);
+  line-height: 1.12;
+}
+
+.full-architecture-page .section-heading h2,
+.technology-heading h2 {
+  font-size: clamp(1.45rem, 2.35vw, 2.2rem);
+}
+
+.hero-copy p,
+.demo-copy p,
+.benefit-grid p,
+.premium-grid p,
+.cta-inner p,
+.developer-hero p,
+.developer-hero-v2 p,
+.developer-note p,
+.section-heading p,
+.diagram-heading p {
+  font-size: 0.96rem;
+  line-height: 1.62;
+}
+
+.hero-copy p {
+  font-size: 1.02rem;
+}
+
+.step-card h3,
+.developer-card h2,
+.pricing-card h3,
+.agent-tile h3,
+.active-topic-card h3 {
+  font-size: 1.08rem;
+}
+
+.step-card p,
+.developer-card p,
+.agent-tile p,
+.benefit-item,
+.pricing-card li,
+.payment-note,
+.trust-item,
+.marketplace-cloud span {
+  font-size: 0.86rem;
+}
+
+.chat-bubble,
+.offer-card strong,
+.console-line,
+.example-button,
+.arch-input-shell input,
+.arch-control-bar select,
+.arch-run-button,
+.arch-reset-button {
+  font-size: 0.86rem;
+}
+
+.offer-card span,
+.phone-top,
+.plan-price span,
+.flow-step small,
+.active-topic-card p,
+.flow-data-card strong {
+  font-size: 0.76rem;
+}
+
+.plan-price strong {
+  font-size: 1.9rem;
+}
+
+.arch-stage-pill strong {
+  font-size: 0.66rem;
+}
+
+.arch-stage-pill small {
+  font-size: 0.58rem;
+}
+
+.arch-kafka-bus .topic-chip {
+  font-size: 0.64rem;
+}
+
+.bus-title,
+.arch-zone-label {
+  font-size: 0.68rem;
+}
+
+.arch-node h3 {
+  font-size: 0.78rem;
+}
+
+.arch-node p {
+  font-size: 0.66rem;
+}
+
+.arch-node small,
+.node-brand {
+  font-size: 0.58rem;
+}
+
+.arch-floating-event span,
+.arch-final-message span,
+.memory-title b {
+  font-size: 0.58rem;
+}
+
+.arch-floating-event strong {
+  font-size: 0.84rem;
+}
+
+.arch-floating-event code,
+.arch-final-message strong,
+.arch-memory-tier p,
+.arch-memory-tier code,
+.memory-logo-chip small,
+.technology-showcase .project-logo-chip small {
+  font-size: 0.66rem;
+}
+
+.memory-title strong {
+  font-size: 0.78rem;
+}
+
+.node-decision-score strong {
+  font-size: 1rem;
+}
+
+.node-decision-score em,
+.node-decision-score span {
+  font-size: 0.52rem;
+}
+
+.technology-showcase .project-logo-group h3 {
+  font-size: 0.66rem;
+}
+
+.logo-mark em,
+.memory-logo-chip em {
+  font-size: 0.52rem;
+}
+/* Moving Kafka message cards */
+.arch-packet.step-0,
+.arch-packet.step-1,
+.arch-packet.step-2,
+.arch-packet.step-3,
+.arch-packet.step-4,
+.arch-packet.step-5,
+.arch-packet.step-6,
+.arch-packet.step-7 {
+  animation-duration: 2.75s;
+}
+
+.arch-floating-event {
+  width: 310px;
+  min-height: 92px;
+  transition: left 420ms ease, top 420ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.arch-floating-event code {
+  max-height: 58px;
+}
+
+.arch-floating-event.step-0 {
+  left: 388px !important;
+  top: 34px !important;
+}
+
+.arch-floating-event.step-1 {
+  left: 422px !important;
+  top: 244px !important;
+}
+
+.arch-floating-event.step-2 {
+  left: 680px !important;
+  top: 242px !important;
+}
+
+.arch-floating-event.step-3 {
+  left: 712px !important;
+  top: 398px !important;
+}
+
+.arch-floating-event.step-4 {
+  left: 864px !important;
+  top: 398px !important;
+}
+
+.arch-floating-event.step-5 {
+  left: 570px !important;
+  top: 614px !important;
+}
+
+.arch-floating-event.step-6 {
+  left: 866px !important;
+  top: 614px !important;
+}
+
+.arch-floating-event.step-7 {
+  left: 740px !important;
+  top: 244px !important;
+}
+
+.arch-floating-event.step-1,
+.arch-floating-event.step-2,
+.arch-floating-event.step-7 {
+  border-color: #bbf7d0;
+  box-shadow: 0 14px 32px rgba(24, 160, 88, 0.12);
+}
+
+.arch-floating-event.step-4 {
+  border-color: #fde68a;
+  box-shadow: 0 14px 32px rgba(245, 158, 11, 0.13);
+}
+
+@media (max-width: 1320px) {
+  .arch-floating-event.step-0 { left: 370px !important; }
+  .arch-floating-event.step-1 { left: 396px !important; }
+  .arch-floating-event.step-2 { left: 646px !important; }
+  .arch-floating-event.step-3 { left: 672px !important; }
+  .arch-floating-event.step-4 { left: 842px !important; }
+  .arch-floating-event.step-5 { left: 548px !important; }
+  .arch-floating-event.step-6 { left: 832px !important; }
+  .arch-floating-event.step-7 { left: 712px !important; }
+}
+/* Kafka message visibility lanes */
+.arch-floating-event {
+  z-index: 30;
+  width: 350px;
+  min-height: 98px;
+  pointer-events: none;
+  border-width: 2px;
+  background: rgba(255, 255, 255, 0.985);
+  box-shadow: 0 18px 38px rgba(16, 24, 40, 0.14);
+}
+
+.arch-floating-event code {
+  max-height: 54px;
+  overflow: hidden;
+}
+
+.arch-floating-event.step-0 {
+  left: 430px !important;
+  top: 46px !important;
+}
+
+.arch-floating-event.step-1 {
+  left: 500px !important;
+  top: 46px !important;
+}
+
+.arch-floating-event.step-2 {
+  left: 580px !important;
+  top: 46px !important;
+}
+
+.arch-floating-event.step-3 {
+  left: 650px !important;
+  top: 46px !important;
+}
+
+.arch-floating-event.step-4 {
+  left: 650px !important;
+  top: 46px !important;
+}
+
+.arch-floating-event.step-5 {
+  left: 570px !important;
+  top: 46px !important;
+}
+
+.arch-floating-event.step-6 {
+  left: 650px !important;
+  top: 46px !important;
+}
+
+.arch-floating-event.step-7 {
+  left: 650px !important;
+  top: 46px !important;
+}
+
+@media (max-width: 1320px) {
+  .arch-floating-event {
+    width: 330px;
+  }
+
+  .arch-floating-event.step-0 { left: 420px !important; }
+  .arch-floating-event.step-1 { left: 480px !important; }
+  .arch-floating-event.step-2 { left: 540px !important; }
+  .arch-floating-event.step-3,
+  .arch-floating-event.step-4,
+  .arch-floating-event.step-6,
+  .arch-floating-event.step-7 { left: 620px !important; }
+  .arch-floating-event.step-5 { left: 540px !important; }
+}
+/* Remove repeated stage strip and compact memory logos */
+.arch-stage-track {
+  display: none !important;
+}
+
+.live-architecture-grid.diagram-only .arch-memory-zone,
+.full-architecture-page .live-architecture-grid.diagram-only .arch-memory-zone {
+  gap: 8px;
+}
+
+.arch-memory-tier {
+  min-height: 0;
+  padding: 10px 11px;
+}
+
+.memory-title {
+  gap: 7px;
+}
+
+.memory-title strong {
+  font-size: 0.72rem;
+}
+
+.memory-title b {
+  padding: 3px 6px;
+  font-size: 0.52rem;
+}
+
+.memory-logo-row {
+  gap: 6px;
+  margin-top: 7px;
+}
+
+.memory-logo-chip {
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  min-height: 30px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  background: #ffffff;
+  border-color: #dde7f0;
+  box-shadow: 0 6px 14px rgba(16, 24, 40, 0.04);
+}
+
+.memory-logo-chip img {
+  width: 22px;
+  height: 22px;
+}
+
+.memory-logo-chip em,
+.memory-logo-chip small {
+  display: none !important;
+}
+
+.arch-memory-tier p {
+  margin: 7px 0 8px;
+  font-size: 0.62rem;
+  line-height: 1.34;
+}
+
+.arch-memory-tier code {
+  margin-top: 3px;
+  padding: 4px 6px;
+  font-size: 0.62rem;
+}
+/* Real architecture node logos */
+.node-brand {
+  min-width: 34px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(23, 32, 51, 0.1);
+  border-radius: 8px;
+}
+
+.node-brand img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.node-brand em {
+  display: none;
+  color: var(--node-brand-color);
+  font-style: normal;
+  font-size: 0.56rem;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.node-brand:not(:has(img)) {
+  background: var(--node-brand-color);
+}
+
+.node-brand:not(:has(img)) em {
+  display: block;
+  color: #ffffff;
+}
+
+.arch-node.decision-node .node-brand {
+  background: var(--node-brand-color);
+}
+
+.arch-node.decision-node .node-brand em {
+  display: block;
+  color: #ffffff;
+}
+
+.arch-node.active .node-brand {
+  border-color: rgba(24, 160, 88, 0.24);
+  box-shadow: 0 10px 22px rgba(24, 160, 88, 0.16);
+}
+/* Failed node logo fallback */
+.node-brand.logo-failed {
+  background: var(--node-brand-color);
+  border-color: transparent;
+}
+
+.node-brand.logo-failed em {
+  display: block;
+  color: #ffffff;
+}
+/* Top-lane gap fix */
+.arch-floating-event {
+  width: 300px;
+  min-height: 92px;
+}
+
+.arch-floating-event code {
+  max-height: 50px;
+}
+
+.arch-floating-event.step-0 {
+  left: 420px !important;
+  top: 52px !important;
+}
+
+.arch-floating-event.step-1 {
+  left: 440px !important;
+  top: 52px !important;
+}
+
+.arch-floating-event.step-2 {
+  left: 470px !important;
+  top: 52px !important;
+}
+
+.arch-floating-event.step-3,
+.arch-floating-event.step-4,
+.arch-floating-event.step-6,
+.arch-floating-event.step-7 {
+  left: 500px !important;
+  top: 52px !important;
+}
+
+.arch-floating-event.step-5 {
+  left: 470px !important;
+  top: 52px !important;
+}
+
+@media (max-width: 1320px) {
+  .arch-floating-event {
+    width: 292px;
+  }
+
+  .arch-floating-event.step-0 { left: 400px !important; }
+  .arch-floating-event.step-1 { left: 420px !important; }
+  .arch-floating-event.step-2,
+  .arch-floating-event.step-5 { left: 450px !important; }
+  .arch-floating-event.step-3,
+  .arch-floating-event.step-4,
+  .arch-floating-event.step-6,
+  .arch-floating-event.step-7 { left: 480px !important; }
+}
