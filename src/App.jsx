@@ -67,7 +67,8 @@ const premiumPlans = [
     note: 'For simple searches',
     badge: 'Try first',
     features: ['Telegram access', 'Manual searches', 'Daily price watch', 'Top 3 ranked results'],
-    action: 'Start free'
+    action: 'Start free',
+    href: 'https://t.me/Dalil_Souqbot'
   },
   {
     name: 'Premium',
@@ -76,7 +77,8 @@ const premiumPlans = [
     badge: 'Best value',
     featured: true,
     features: ['Hourly deal watch', 'Priority scraping', 'Saved preferences', 'Faster answers', 'WhatsApp access when enabled'],
-    action: 'Continue to payment'
+    action: 'Continue to payment',
+    href: '#top'
   }
 ]
 
@@ -423,7 +425,7 @@ function HomePage() {
                     <li key={feature}><CheckCircle2 size={18} /> {feature}</li>
                   ))}
                 </ul>
-                <a className={plan.featured ? 'pay-button primary' : 'pay-button'} href="#top">
+                <a className={plan.featured ? 'pay-button primary' : 'pay-button'} href={plan.href}>
                   {plan.action} <ArrowRight size={18} />
                 </a>
               </article>
