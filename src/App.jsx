@@ -140,8 +140,8 @@ const diagramNodes = [
   { id: 'scraper-jumia', x: 222, y: 438, icon: Network, title: 'Jumia Pool', tech: 'Scrapy providers', logo: ['JM', '#f59e0b', 'https://www.google.com/s2/favicons?domain=jumia.ma&sz=64'] },
   { id: 'scraper-avito', x: 444, y: 438, icon: Cpu, title: 'Avito Pool', tech: 'Playwright providers', logo: ['AV', '#16a34a', 'https://www.google.com/s2/favicons?domain=avito.ma&sz=64'] },
   { id: 'scraper-other', x: 666, y: 438, icon: Server, title: 'Other Providers', tech: 'Electro / Moteur / Mafiaway', logo: ['SC', '#16a34a', 'https://www.google.com/s2/favicons?domain=scrapy.org&sz=64'] },
-  { id: 'decision', x: 888, y: 438, icon: Gauge, title: 'Decision Agent', tech: '100-point scoring', logo: ['100', '#0f766e', ''] },
-  { id: 'generator', x: 666, y: 606, icon: Bot, title: 'Agent Generator', tech: 'Groq + template guard', logo: ['GQ', '#f97316', 'https://www.google.com/s2/favicons?domain=groq.com&sz=64'] },
+  { id: 'decision', x: 666, y: 606, icon: Gauge, title: 'Decision Agent', tech: '100-point scoring', logo: ['100', '#0f766e', ''] },
+  { id: 'generator', x: 888, y: 438, icon: Bot, title: 'Agent Generator', tech: 'Groq + template guard', logo: ['GQ', '#f97316', 'https://www.google.com/s2/favicons?domain=groq.com&sz=64'] },
   { id: 'scheduler', x: 888, y: 606, icon: Clock, title: 'Ambient Scheduler', tech: 'Daily / premium hourly', logo: ['24h', '#2563eb', 'https://cdn.simpleicons.org/googlecalendar'] },
   { id: 'governance', x: 1034, y: 250, icon: Shield, title: 'Governance Agent', tech: 'Bus monitor + audit', logo: ['OPA', '#b91c1c', 'https://cdn.simpleicons.org/openpolicyagent'] },
   { id: 'response', x: 1034, y: 34, icon: Radio, title: 'Response Out', tech: 'WhatsApp delivery', logo: ['WA', '#22c55e', 'https://cdn.simpleicons.org/whatsapp'] }
@@ -165,9 +165,9 @@ const diagramLinks = [
   { id: 'orchestrator-ner', d: 'M 178 304 L 280 304' },
   { id: 'orchestrator-cache', d: 'M 178 330 C 290 366 430 366 512 330' },
   { id: 'orchestrator-scrapers', d: 'M 130 360 C 250 404 462 406 754 438' },
-  { id: 'scrapers-decision', d: 'M 352 490 L 444 490 M 574 490 L 666 490 M 796 490 L 888 490' },
-  { id: 'decision-generator', d: 'M 952 552 C 910 594 812 606 796 650' },
-  { id: 'generator-response', d: 'M 796 638 C 920 580 1122 300 1122 150' },
+  { id: 'scrapers-decision', d: 'M 352 490 L 444 490 M 574 490 L 666 490 M 730 552 L 730 606' },
+  { id: 'decision-generator', d: 'M 796 650 C 860 630 900 552 952 552' },
+  { id: 'generator-response', d: 'M 1018 490 C 1080 420 1122 300 1122 150' },
   { id: 'response-user', d: 'M 1034 84 C 790 4 364 4 170 84' },
   { id: 'scheduler-loop', d: 'M 968 606 C 1050 568 1060 456 1034 368' },
   { id: 'governance-watch', d: 'M 1034 304 C 912 214 782 184 650 176' }
