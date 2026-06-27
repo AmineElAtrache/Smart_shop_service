@@ -33,7 +33,7 @@ import {
 import { motion } from 'framer-motion'
 import './styles.css'
 
-const marketplaces = ['Jumia', 'Avito', 'Electroplanet', 'Electrosalam', 'Biougnach', 'Decathlon', 'Defacto', 'Ikea', 'Marjane', 'Mafiaway Store', 'Moteur.ma', 'Mubawab', 'Mymarket', 'UltraPC']
+const marketplaces = ['Jumia', 'Avito', 'Electroplanet', 'Electrosalam', 'Biougnach', 'Decathlon', 'Defacto', 'Ikea', 'Marjane', 'Mafiaway Store', 'Moteur.ma', 'Mubawab', 'Mymarket', 'UltraPC', 'Palmarosa', 'Bringo', 'Planet Sport']
 
 const steps = [
   {
@@ -141,7 +141,7 @@ const diagramNodes = [
   { id: 'cache', x: 512, y: 250, icon: Database, title: 'Global Cache', tech: 'Redis Tier 1', logo: ['RD', '#dc2626', 'https://cdn.simpleicons.org/redis'] },
   { id: 'scraper-jumia', x: 222, y: 438, icon: Network, title: 'Jumia Pool', tech: 'Scrapy providers', logo: ['JM', '#f59e0b', 'https://www.google.com/s2/favicons?domain=jumia.ma&sz=64'] },
   { id: 'scraper-avito', x: 444, y: 438, icon: Cpu, title: 'Avito Pool', tech: 'Playwright providers', logo: ['AV', '#16a34a', 'https://www.google.com/s2/favicons?domain=avito.ma&sz=64'] },
-  { id: 'scraper-other', x: 666, y: 438, icon: Server, title: 'Other Providers', tech: 'Electro / Moteur / Mafiaway', logo: ['SC', '#16a34a', 'https://www.google.com/s2/favicons?domain=scrapy.org&sz=64'] },
+  { id: 'scraper-other', x: 666, y: 438, icon: Server, title: 'Other Providers', tech: 'Electro / Moteur / Palmarosa', logo: ['SC', '#16a34a', 'https://www.google.com/s2/favicons?domain=scrapy.org&sz=64'] },
   { id: 'decision', x: 666, y: 606, icon: Gauge, title: 'Decision Agent', tech: '100-point scoring', logo: ['100', '#0f766e', ''] },
   { id: 'generator', x: 888, y: 438, icon: Bot, title: 'Agent Generator', tech: 'Groq + template guard', logo: ['GQ', '#f97316', 'https://www.google.com/s2/favicons?domain=groq.com&sz=64'] },
   { id: 'scheduler', x: 888, y: 606, icon: Clock, title: 'Ambient Scheduler', tech: 'Daily / premium hourly', logo: ['24h', '#2563eb', 'https://cdn.simpleicons.org/googlecalendar'] },
@@ -177,7 +177,7 @@ const diagramLinks = [
 
 const projectLogoGroups = [
   {
-    title: 'Shopping providers - 14 connected spiders',
+    title: 'Shopping providers - 17 connected spiders',
     logos: [
       ['Jumia', '??', 'JM', '#f59e0b', 'https://www.google.com/s2/favicons?domain=jumia.ma&sz=64'],
       ['Avito', '???', 'AV', '#16a34a', 'https://www.google.com/s2/favicons?domain=avito.ma&sz=64'],
@@ -192,7 +192,10 @@ const projectLogoGroups = [
       ['Moteur.ma', '??', 'MO', '#b91c1c', 'https://www.google.com/s2/favicons?domain=moteur.ma&sz=64'],
       ['Mubawab', '??', 'MB', '#0891b2', 'https://www.google.com/s2/favicons?domain=mubawab.ma&sz=64'],
       ['Mymarket', '??', 'MM', '#18a058', 'https://www.google.com/s2/favicons?domain=mymarket.ma&sz=64'],
-      ['UltraPC', '???', 'UP', '#4338ca', 'https://www.google.com/s2/favicons?domain=ultrapc.ma&sz=64']
+      ['UltraPC', '???', 'UP', '#4338ca', 'https://www.google.com/s2/favicons?domain=ultrapc.ma&sz=64'],
+      ['Palmarosa', '??', 'PR', '#db2777', 'https://www.google.com/s2/favicons?domain=palmarosashop.com&sz=64'],
+      ['Bringo', '??', 'BR', '#16a34a', 'https://www.google.com/s2/favicons?domain=bringo.ma&sz=64'],
+      ['Planet Sport', '??', 'PS', '#1d4ed8', 'https://www.google.com/s2/favicons?domain=planetsport.ma&sz=64']
     ]
   },
   {
@@ -520,7 +523,7 @@ function DeveloperCuriosityPage() {
             <span className="eyebrow"><Code2 size={16} /> Developer curiosity</span>
             <h1>Watch the architecture run live.</h1>
             <p>
-              This page turns the PFA architecture into a living control room: Kafka topics light up,
+              This page turns the project architecture into a living control room: Kafka topics light up,
               agents activate, memory tiers read and write, governance audits the bus, and the final
               response appears from the same sentence.
             </p>
@@ -597,7 +600,7 @@ function makePipelineStages(example, cacheMode) {
       memory: ['global', 'user'],
       status: cacheHit ? 'Fresh cached products found. Scraping is skipped.' : 'No fresh cache found. The orchestrator creates provider tasks.',
       log: cacheHit ? 'Redis Tier 1 returns fresh products for this query.' : 'Redis Tier 1 has no fresh product set, so the system fans out scraping tasks.',
-      payload: cacheHit ? `cache.hit { source: 'redis', ttl: 'fresh', skip_scraping: true }` : `scrape.task.assigned { providers: 14, query: '${example.query}' }`
+      payload: cacheHit ? `cache.hit { source: 'redis', ttl: 'fresh', skip_scraping: true }` : `scrape.task.assigned { providers: 17, query: '${example.query}' }`
     },
     {
       key: 'scrape',
@@ -608,9 +611,9 @@ function makePipelineStages(example, cacheMode) {
       memory: cacheHit ? ['global'] : [],
       status: cacheHit
         ? 'Fresh products are already in Redis, so scraper pools stay cold and the system saves time.'
-        : 'Scraping tasks are assigned to Jumia, Avito, Electro, Moteur, and other providers in parallel.',
+        : 'Scraping tasks are assigned to Jumia, Avito, Electro, Moteur, Palmarosa, Bringo, Planet Sport, and other providers in parallel.',
       log: cacheHit ? 'Fast path uses cached normalized listings.' : 'Marketplace providers return raw products, prices, sources, availability, and links.',
-      payload: cacheHit ? `cache.fast_path { products: 3, latency: 'low' }` : `scrape.raw { providers_done: 14, normalized_products: ${example.products.length} }`
+      payload: cacheHit ? `cache.fast_path { products: 3, latency: 'low' }` : `scrape.raw { providers_done: 17, normalized_products: ${example.products.length} }`
     },
     {
       key: 'decision',
